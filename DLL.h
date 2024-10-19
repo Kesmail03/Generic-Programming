@@ -15,12 +15,12 @@ class node
 		node(const TYPE & src);
 		node_ptr_type & get_next();
 		node_ptr_type & get_previous();
-		//TYPE get_data() const;
+		TYPE get_data() const;
 		void display() const;
 
 
 	protected:
-		activity * data;
+		TYPE * data;
 		node_ptr_type next;
 		node_ptr_type previous;
 
@@ -39,15 +39,12 @@ class DLL
 
 		DLL();
 		DLL(const DLL & src);
+		int add(const TYPE & data);	
+		int remove();
+		int display();
 		
-		//DLL<TYPE> & operator=(const DLL<TYPE> & src);
-		//friend DLL<TYPE> operator+(DLL);adds one node at the end;
-		//friend DLL<TYPE> operator+=();traverses the list forwards
-
-		
-
-
 	protected:
+		int display(node_ptr head);
 		node_ptr head;
 		node_ptr tail;
 

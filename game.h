@@ -19,6 +19,7 @@ class activity
 		activity();
 		~activity();
 		activity(const activity & to_copy);
+		int compare(const char * to_compare);
 
 		activity & operator=(const activity & src);
 		friend ostream & operator<<(ostream & output, const activity & to_display);
@@ -46,7 +47,6 @@ class activity
 		friend bool operator >=(const activity & op1, const char * name);
 		friend bool operator >=(const activity & op1, const activity & op2);
 	protected:
-		int compare(const char * to_compare);
 		char * name;
 		int count;//number of activities
 
@@ -77,6 +77,7 @@ class game: public activity
 		~game();
 		game(const game & to_copy);
 		game & operator=(const game & src);
+		int display() const;
 		friend ostream & operator<<(ostream & output, const game & to_display);
 		friend istream & operator>>(istream & input, game &);
 		
